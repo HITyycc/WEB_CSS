@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Add React in One Minute</title>
+    <style>
+        body{
+            width: 100%;
+        }
+        #container{
+            margin: 3% 10% auto;
+            text-align: center;
+
+        }
+        button{
+            border-radius: 5px;
+            margin-top: 40px;
+            font-size: 24px;
+            width: 130px;
+        }
+        #line{
+            width:0px;
+            height: 3px;
+            background-color: cadetblue;
+            margin: 0px auto;
+            transition: width ease-in-out 0.5s ;
+        }
+        h1{
+            margin-bottom: 4px;
+            transition: color ease-in-out 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id = 'container'>
+            <h1>前端学院</h1>
+            <div id = 'line'></div>
+        <button id = 'btn'>切换样式</button>
+    </div>
+<script>
+
+    function handleOnclick(oColor, oWidth, tColor, tWidth){
+        var flag = 0;
+        var word = document.getElementsByTagName('h1')[0];
+        var line = document.getElementById('line');
+        return function(){
+            if(flag === 0){
+                word.style.color = tColor;
+                line.style.width = tWidth;
+                flag = 1;
+            }else{
+                word.style.color = oColor;
+                line.style.width = oWidth;
+                flag = 0;
+            }
+        };
+    }
+    document.getElementById('btn').onclick = handleOnclick('black','0px', 'cadetblue','140px');
+</script>
+
+</body>
+</html>
