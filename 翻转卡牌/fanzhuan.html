@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3D翻转卡片</title>
+    <style>
+        #container{
+            position: relative;
+        }
+        #container img{
+            position: absolute;
+            transition: all 0.3s linear;
+        }
+        #container img:nth-child(1){
+            transform: rotateY(-180deg);
+            z-index: 0;
+        }
+        #container:hover img:nth-child(1){
+            transform: rotateY(0deg);
+            z-index: 1;
+        }
+        #container:hover img:nth-child(2){
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div id = 'container'>
+        <img src="./img/反面.jpg"/>
+        <img src="./img/正面.jpg"/>
+    </div>
+</body>
+</html>
